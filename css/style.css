@@ -1,0 +1,132 @@
+/* Reset navegador */
+@font-face {
+    font-family: 'Kopodaps';
+    src: url('resources/fonts/kopodaps/Kopodaps.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    }
+
+*{
+    margin: 0;
+    border: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Kopodaps', Arial, serif ;
+
+}
+
+body{
+    background-repeat: no-repeat;
+    display: inline;
+    background: linear-gradient(to left ,#783602, #7e3b07, #85400d, #8b4513, #914a18, #98501e, #9e5523)
+}
+
+.body-items{
+    min-height: 80vh;
+    min-width: 80vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container{
+    background-color: #b9550d;
+    color: white;
+    max-width: 300px;
+    min-width: 30vh;
+    padding: 1.5rem;
+    box-shadow: 5px 5px 15px rgba(0 ,0 , 0, 0.4);
+    border-radius: 8px;
+}
+
+
+.cabecalho{
+    background-color: #b9550d;
+    margin: 0;
+    text-align: center;
+}
+
+.cabecalho img{
+    width: 50px;
+    height: 50px;
+    padding: 4px;
+    user-select: none;
+}
+
+.txt-login{
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 1.2rem;
+    text-align: center;
+    letter-spacing: 0.8px;
+    user-select: none;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+.campo{
+    position: relative;
+}
+
+form .campo:first-child{
+    margin-bottom: 0.5rem;
+}
+
+.campo input{
+    outline: auto;
+    font-size: 1.5rem;
+    color: rgba(0 ,0 , 0, 1);
+    width: 100%;
+    height: 40px;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 0.7px;
+}
+
+.campo input::placeholder{
+    color: rgba(0, 0, 0, 0.3);
+}
+
+form input[type="submit"]{
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    outline: auto;
+    padding: 0.4rem;
+    background: #b9550d;
+    cursor: pointer;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 300px;
+    border-radius: 4px;
+    transition: all 0.7s ease; 
+    text-transform: uppercase;
+}
+
+form input[type="submit"]:hover{
+    letter-spacing: 0.3px;
+}
+
+.footer{
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    letter-spacing: 0.2px;
+    user-select: none;
+}
+
+/*Limpar placeholder*/
+input:focus::-webkit-input-placeholder {
+    color: transparent;
+ }
+ input:focus:-moz-placeholder { /* Firefox 18- */
+    color: transparent;  
+ }
+ input:focus::-moz-placeholder {  /* Firefox 19+ */
+    color: transparent;  
+ }
+ input:focus:-ms-input-placeholder {  
+    color: transparent;  
+ }
