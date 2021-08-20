@@ -29,7 +29,7 @@
     </div>
     <div class="body-items">
         <div class="container">
-            <h2 class="txt-login">LOGIN 🐾</h2>
+            <h2 class="txt-login">LOGIN🐾</h2>
                 <form action="login.php" method="POST">                
                         <div class="campo">                    
                             <input type="text" name="user" id="user" placeholder="Usuário">                
