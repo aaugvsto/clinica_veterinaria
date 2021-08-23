@@ -1,8 +1,30 @@
-txtpass = document.getElementById('user')
-txtuser = document.getElementById('pass')
-function login(){
-    if(txtpass.value == "" || txtuser.value == ""){
-        alert('[ERRO!] \nInsira seus dados de login!')
+$(".sidebar-dropdown > a").click(function() {
+    $(".sidebar-submenu").slideUp(200);
+    if (
+      $(this)
+        .parent()
+        .hasClass("active")
+    ) {
+      $(".sidebar-dropdown").removeClass("active");
+      $(this)
+        .parent()
+        .removeClass("active");
+    } else {
+      $(".sidebar-dropdown").removeClass("active");
+      $(this)
+        .next(".sidebar-submenu")
+        .slideDown(200);
+      $(this)
+        .parent()
+        .addClass("active");
     }
-}
-
+  });
+  
+  $("#close-sidebar").click(function() {
+    $(".page-wrapper").removeClass("toggled");
+  });
+  $("#show-sidebar").click(function() {
+    $(".page-wrapper").addClass("toggled");
+  });
+  
+  

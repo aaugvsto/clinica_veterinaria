@@ -6,12 +6,12 @@ if(empty($_POST['user']) || empty($_POST['pass'])){
     exit();
 }
 
-$user = mysqli_real_escape_string($conexao, $_POST['user']);
-$pass = mysqli_real_escape_string($conexao, $_POST['pass']);
+$user = mysqli_real_escape_string($mysqli, $_POST['user']);
+$pass = mysqli_real_escape_string($mysqli, $_POST['pass']);
 
 $query = "select id, nome from users where cpf = '{$user}' and senha = md5('{$pass}')";
 
-$result = mysqli_query($conexao, $query);
+$result = mysqli_query($mysqli, $query);
 
 $row = mysqli_num_rows($result);
 

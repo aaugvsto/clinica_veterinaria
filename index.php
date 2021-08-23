@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="css/style.css">
     <script type="text/javascript" src="js/script.js"></script>
     <link rel="shortcut icon" href="resources/favicon/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
     <title>Veterinaria Seu Pet ❤</title>
 </head>
 
@@ -23,7 +24,7 @@
     font-style: normal;
     }
 </style>
-<body onload="document.getElementById('user').focus()">
+<body onload="document.getElementById('user').focus()" class="body-login">
     <div class=cabecalho>
         <img src="resources/images/topo.png" id="img-dog" alt="">
     </div>
