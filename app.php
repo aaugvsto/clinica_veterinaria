@@ -22,16 +22,7 @@ include("classes/exibirAnimais.php")
         font-style: normal;
     }
 
-    table, th, td {
-  border: 1px solid black;
-  padding: 10px;
-  text-align: center;
-  background: white;
-}
-table.center {
-  margin-left: auto;
-  margin-right: auto;
-}
+
 </style>
 
 <body class="body-app">
@@ -44,7 +35,7 @@ table.center {
         
         <nav>
             <div class="user-data">
-                <img src="resources/images/user.png" class="brand" alt="foto"></img>
+                <img src="resources/images/img_users/user.png" class="brand" alt="foto"></img>
                 <div id="nome">
                     <p class="brand" id="nome">NAME_USER</p>
                 </div>

@@ -1,5 +1,6 @@
 <?php
     header('Content-Type: text/html; charset=utf-8');
+    include('config/conexao.php');
 ?>
 
 <!DOCTYPE html>
@@ -31,19 +32,20 @@
     <div class="body-items">
         <div class="container">
             <h2 class="txt-login">LOGIN🐾</h2>
-                <form action="login.php" method="POST">                
+                <form action="classes/login.php" method="POST">                
                         <div class="campo">                    
                             <input type="text" name="user" id="user" placeholder="Usuário">                
                         </div>
                         <div class="campo">                    
                             <input type="password" name="pass" id="pass" placeholder="Senha">   
                         </div>
-                        <input type="submit" id="btnAcessar" class="btnAcessar" onclick="login()" value="Acessar">
-                </form>
-            <div class="footer">                
-                    <span>CLÍNICA VETERINÁRIA SEU PET 🐶😸</span>                
+                        <input type="submit" name="btnAcessar" value="Acessar">
+                        <input type="button" name="btnCadastar" onclick="cadastro()" value="Cadastar">
+                    </form>
+            <div class="footer">
+                    <span>CLÍNICA VETERINÁRIA SEU PET 🐶😸</span>
             </div>
         </div>
-    </div>    
+    </div>
 </body>
 </html>

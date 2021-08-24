@@ -1,5 +1,5 @@
 <?php
-include('config/conexao.php');
+include "../config/conexao.php";
 
 if(empty($_POST['user']) || empty($_POST['pass'])){
     header('location: index.php');
@@ -17,9 +17,9 @@ $row = mysqli_num_rows($result);
 
 if($row == 1){
     $_SESSION['user'] = $user;
-    header('location: app.php');
+    header('location: ../app.php');
 }else{
-    header('location: index.php');
+    header('location: ../index.php');
     exit();
 }
 

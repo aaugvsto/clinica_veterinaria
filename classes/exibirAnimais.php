@@ -1,6 +1,6 @@
 <?php
 
-$consult = "SELECT * FROM tblexibir";
+$consult = "SELECT * FROM exibiranimais";
 $con = $mysqli->query($consult) or die ($mysqli->error);
 
 
