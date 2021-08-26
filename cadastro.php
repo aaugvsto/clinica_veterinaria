@@ -8,6 +8,7 @@
 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <script src="js/script.js"></script>
 
     <title>Cadastro</title>
 </head>
@@ -19,19 +20,17 @@
         font-style: normal;
     }
 
-    form input[type="file"]{
-        color: black; 
-        padding: 2px; 
+    form input[type="file"] {
+        color: black;
+        padding: 2px;
         background: white;
         cursor: pointer;
     }
-
-    
 </style>
 
 <body class="body-app">
     <div class="cabecalho-app">
-        <div class="img-cad"><img src="resources/favicon/veterinario1.png" alt=""></img></div>
+        <div class="img-cad"><a href="index.php"><img src="resources/favicon/veterinario1.png" alt=""></a></div>
     </div>
     <div class="body-items">
         <div class="container">
@@ -42,7 +41,7 @@
                         <input type="text" name="nome" id="nome" placeholder="Nome completo">
                     </div>
                     <div class="campo-cad">
-                        <input type="text" name="cpf" id="cpf" placeholder="Cpf">
+                        <input name="cpf" id="cpf" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="11" placeholder="CPF" />
                     </div>
                 </div>
                 <div class="row">
@@ -59,7 +58,7 @@
                     </div>
                 </div>
                 <div class="campo-cad senha-cad">
-                    <input type="password" name="pass" id="pass" placeholder="Senha">
+                    <input type="password" name="pass" id="pass" placeholder="Senha" minlength="6">
                 </div>
                 <input type="submit" id="btnCad" value="Cadastrar">
             </form>
@@ -69,7 +68,7 @@
             <div class="voltar">
                 <a href="index.php" style="text-align: right; font-size: 25px;">Voltar<a>
             </div>
-            
+
         </div>
     </div>
 </body>

@@ -1,11 +1,3 @@
-/* Reset navegador */
-@font-face {
-    font-family: 'Kopodaps';
-    src: url('resources/fonts/kopodaps/Kopodaps.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
-}
-
 * {
     margin: 0;
     border: 0;
@@ -98,7 +90,6 @@ form .campo:first-child {
 }
 
 .campo input {
-    outline: auto;
     font-size: 1.5rem;
     color: rgba(0, 0, 0, 1);
     width: 100%;
@@ -113,16 +104,13 @@ form .campo:first-child {
 }
 
 form input[type="submit"] {
-    margin-top: 0.8rem;
-    margin-bottom: 0.1rem;
-    outline: auto;
+    outline: none;
     padding: 0.4rem;
     background: #b9550d;
     cursor: pointer;
     color: white;
     font-size: 1.5rem;
     font-weight: 300px;
-    border-radius: 4px;
     transition: all 0.7s ease;
     text-transform: uppercase;
 }
@@ -384,4 +372,128 @@ table, th, td {
     text-transform: uppercase;
     letter-spacing: 0.2px;
     text-decoration: underline;
+}
+
+/* Retirar setas input number*/
+form input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Popup Cadastro */
+.popup{
+    background: rgba(0, 0, 0, 0.8);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content{
+    min-height: 250px;
+    width: 250px;
+    background-color: white;
+    padding: 20px;
+    position: relative;
+    text-align: center;
+}
+
+.imgpop{
+    margin-bottom: 1rem;
+    user-select: none;
+}
+
+form#frm-pop input[type="submit"] {
+    margin-top: 0.8rem;
+    margin-bottom: 0.1rem;
+    outline: auto;
+    padding: 0.4rem;
+    background: #106ffd;
+    cursor: pointer;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 300px;
+    border-radius: 4px;
+    transition: all 0.7s ease;
+    text-transform: uppercase;
+}
+
+
+form#frm-pop input[type="submit"]:hover {
+    letter-spacing: 0.3px;
+    background-color: white;
+    color: black;
+}
+
+.close-pop{
+    position: absolute;
+    top: 7px;
+    right: 7px;
+    width: 30px;
+    padding: 3px;
+    color: #106ffd;
+    border: 1px solid;
+    border-radius: 6px;
+}
+
+.close-pop:hover{
+    cursor: pointer;
+    background: #106ffd;
+    color: white;
+    transition: .7s ease;
+    border-radius: 6px;
+}
+
+.inp-icon{
+    padding: 11px 6px;
+    max-height: auto;
+    margin-right: 1px;
+    color: white;   
+}
+
+.row-inp{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: auto;
+    width: auto;
+    margin: 0;
+    border: 2px solid black;
+    border-radius: 2px;
+}
+
+input[type="text"]{
+    outline: 0;
+    border-left: 2px solid black;
+}
+
+input[type="password"]{
+    outline: 0;
+    border-left: 2px solid black;
+}
+
+input[type="submit"]{
+    outline: 0;
+    border-right: 2px solid black;
+}
+
+input[type="button"]{
+    outline: 0;
+    border-right: 2px solid black;
+}
+
+.colorinp-login{
+    background-color: #D2691E;
+}
+
+.colorinp-adm{
+    background-color: #106ffd;
+}
+
+.inp-icon-login{
+    color: black;
 }
