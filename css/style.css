@@ -29,11 +29,12 @@ body {
 .container {
     background-color: #b9550d;
     color: white;
-    max-width: 600px;
+    max-width: 700px;
     min-width: 30vh;
     padding: 1.5rem;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
     border-radius: 8px;
+    border: 2px solid black;
 }
 
 
@@ -113,59 +114,54 @@ form input[type="submit"] {
     font-weight: 300px;
     transition: all 0.7s ease;
     text-transform: uppercase;
+    border-right: 3px solid black;
 }
 
 
 form input[type="submit"]:hover {
-    letter-spacing: 0.3px;
     background-color: white;
     color: black;
 }
 
 form input[type="button"] {
-    margin-top: 0.8rem;
-    margin-bottom: 0.5rem;
-    outline: auto;
+    outline: none;
+    border: 0px;
+    border-right: 3px solid black;
     padding: 0.4rem;
     background: #b9550d;
     cursor: pointer;
     color: white;
     font-size: 1.5rem;
     font-weight: 300px;
-    border-radius: 4px;
     transition: all 0.7s ease;
     text-transform: uppercase;
 }
 
 form input[type="button"]:hover {
-    letter-spacing: 0.3px;
     background-color: white;
     color: black;
 }
 
-input#btnCad{
-    margin-bottom: .5rem;
-}
-
 .campo-cad {
     display: flex;
-    padding: 5px;
-    width: 250px;
+    width: 100%;
+    border: 3px solid black;
+    border-radius: 3px;
 }
 
 .campo-cad input {
-    outline: auto;
+    outline: none;
+    text-align: center;
     font-size: 1.5rem;
     color: rgba(0, 0, 0, 1);
     width: 100%;
     height: 40px;
     text-transform: uppercase;
-    text-align: center;
     letter-spacing: 0.7px;
 }
 
 .campo-cad select {
-    outline: auto;
+    outline: 0;
     font-size: 1.5rem;
     color: rgba(0, 0, 0, 1);
     width: 100%;
@@ -182,11 +178,14 @@ input#btnCad{
 }
 
 .footer {
+    margin-top: 10px;
     text-align: center;
     text-transform: uppercase;
     font-size: 1.6rem;
     letter-spacing: 0.2px;
     user-select: none;
+    margin-bottom: 0px;
+    padding: 0;
 }
 
 /*Limpar placeholder txt*/
@@ -356,7 +355,32 @@ table, th, td {
 .row{
     display: flex;
     flex-direction: row;
-    width: 100%;
+}
+
+.row-btns{
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+}
+
+.row-inp{
+    display: flex;
+    flex-direction: row;
+    border: 3px solid black;
+
+}
+
+.row-inp-cad{
+    align-items: center;
+    height: auto;
+    width: auto;
+    margin: 0;
+    border: 2px solid black;
+    border-radius: 2px;
+}
+
+.rowitenslog{
+    padding: 20px;
 }
 
 .senha-cad{
@@ -370,8 +394,18 @@ table, th, td {
 .voltar{
     text-align: right;
     text-transform: uppercase;
-    letter-spacing: 0.2px;
-    text-decoration: underline;
+    padding: 5px;
+    transition: 0.8s ease;
+    border: 3px solid black;
+    border-radius: 4px;
+}
+
+.voltar:hover{
+   background-color: white;
+   color: black;
+   letter-spacing: 1.1px;
+   border: 3px solid black;
+   border-radius: 4px;
 }
 
 /* Retirar setas input number*/
@@ -408,16 +442,12 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 form#frm-pop input[type="submit"] {
-    margin-top: 0.8rem;
-    margin-bottom: 0.1rem;
-    outline: auto;
-    padding: 0.4rem;
+    outline: none;
     background: #106ffd;
     cursor: pointer;
     color: white;
     font-size: 1.5rem;
     font-weight: 300px;
-    border-radius: 4px;
     transition: all 0.7s ease;
     text-transform: uppercase;
 }
@@ -426,7 +456,7 @@ form#frm-pop input[type="submit"] {
 form#frm-pop input[type="submit"]:hover {
     letter-spacing: 0.3px;
     background-color: white;
-    color: black;
+    color: #106ffd;
 }
 
 .close-pop{
@@ -449,41 +479,46 @@ form#frm-pop input[type="submit"]:hover {
 }
 
 .inp-icon{
-    padding: 11px 6px;
-    max-height: auto;
-    margin-right: 1px;
-    color: white;   
+    padding: 10px 0px;
+    width: 40px;
+    text-align: center;
+    color: white;
+    background-color: #D2691E;
 }
 
-.row-inp{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    height: auto;
-    width: auto;
-    margin: 0;
-    border: 2px solid black;
-    border-radius: 2px;
+.inp-icon-pop{
+    padding: 10px 0px;
+    width: 40px;
+    text-align: center;
+    color: white;
+    background-color: #106ffd;
 }
 
 input[type="text"]{
     outline: 0;
-    border-left: 2px solid black;
+    border-left: 3px solid black;
 }
 
 input[type="password"]{
     outline: 0;
-    border-left: 2px solid black;
+    border-left: 3px solid black;
 }
 
 input[type="submit"]{
     outline: 0;
-    border-right: 2px solid black;
+}
+
+input[type="number"]{
+    outline: 0;
+}
+
+select{
+    outline: 0;
 }
 
 input[type="button"]{
     outline: 0;
-    border-right: 2px solid black;
+    border-right: 3px solid black;
 }
 
 .colorinp-login{
@@ -496,4 +531,60 @@ input[type="button"]{
 
 .inp-icon-login{
     color: black;
+}
+
+.btn-cadpad{
+    margin-left: 11px;
+}
+
+.btn-cad-pop{
+    border-right: 0px;
+}
+
+.border-btn-pop{
+    border: 2px solid black;
+}
+
+.input-cadastro{
+    outline: 0;
+    border-left: 3px solid black;
+}
+
+div.voltar-a{
+    margin-top: 5px;
+     text-align: right;
+}
+
+.padcad{
+    padding-bottom: 5px;
+    padding-right: 5px;
+    width: 100%;
+}
+
+.padcad-r{
+    padding-right: 0px;
+}
+
+
+input[type="submit"]{
+    border-right: 3px solid black;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    transition: .7s ease;
+}
+
+input[type="button"]{
+    border-right: 3px solid black;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    transition: .7s ease;
+}
+
+
+.inp-hover:hover{
+    background-color: white;
+    color: black;
+    letter-spacing: 1.3px;
 }

@@ -1,6 +1,5 @@
 <?php
 header('Content-Type: text/html; charset=utf-8');
-include('config/conexao.php');
 ?>
 
 <!DOCTYPE html>
@@ -24,6 +23,19 @@ include('config/conexao.php');
         font-weight: normal;
         font-style: normal;
     }
+
+    @media(max-width: 700px) {
+        .row-btns {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .padcad {
+            padding-bottom: 5px;
+            padding-right: 0px;
+            width: 100%;
+        }
+    }
 </style>
 
 <body onload="document.getElementById('user').focus()" class="body-login">
@@ -37,56 +49,65 @@ include('config/conexao.php');
                 <div class="campo">
                     <div class="row-inp colorinp-login">
                         <i class="inp-icon fas fa-user"></i>
-                        <input type="text" name="user" id="user" placeholder="Usuário">
+                        <input type="text" required="required" name="user" id="user" placeholder="Usuário">
                     </div>
                 </div>
                 <div class="campo">
                     <div class="row-inp colorinp-login">
                         <i class="inp-icon fas fa-lock"></i>
-                        <input type="password" name="pass" id="pass" placeholder="Senha">
+                        <input type="password" required="required" name="pass" id="pass" placeholder="Senha">
                     </div>
                 </div>
-                <div style="margin-top: 10px;" class="campo">
-                    <div class="row-inp colorinp-login">
-                        <input type="submit" name="btnAcessar" id="btnAcessar" value="Acessar">
-                        <i class="inp-icon fas fa-sign-in-alt"></i>
+                <div class="row-btns">
+                    <div class="padcad">
+                        <div class="campo-cad">
+                            <input type="submit" value="Acessar">
+                            <i class="inp-icon fas fa-sign-in-alt"></i>
+                        </div>
                     </div>
-                </div>
-                
-                <div style="margin-top: 10px;" class="campo">
-                    <div class="row-inp colorinp-login">
-                        <input type="submit" name="btnCadastrar" id="btnCadastrar" value="Cadastar">
-                        <i class="inp-icon fas fa-address-book"></i>
-                    </div>
-                </div>
-            </form>
-            
-            <div class="footer">
-                <span>CLÍNICA VETERINÁRIA SEU PET 🐶😸</span>
-            </div>
-        </div>
 
-        <div class="popup">
-            <div class="popup-content">
-                <span id="close-btn" class="fas fa-times close-pop" onclick="fecharpop()"></span>
-                <img src="resources/images/img_users/adm-cad.png" class="imgpop" alt="">
-                <form action="classes/loginadm.php" method="POST" id="frm-pop">
-                    <div class="campo">
-                        <div class="row-inp colorinp-adm">
-                            <i class="inp-icon fas fa-user"></i>
-                            <input type="text" name="admlogin" id="admlogin" placeholder="Usuário">
+                    <div class="padcad padcad-r">
+                        <div class="campo-cad">
+                            <input type="button" value="Cadastrar" onclick="abrirpop()">
+                            <i class="inp-icon fas fa-user-plus"></i>
                         </div>
                     </div>
-                    <div class="campo">
-                        <div class="row-inp colorinp-adm">
-                            <i class="inp-icon fas fa-lock"></i>
-                            <input type="password" name="admsenha" id="admsenha" placeholder="Senha">
-                        </div>
-                    </div>
-                    <input type="submit" value="ACESSAR" class="formpop">
-            </div>
+
+                </div>
             </form>
+            <div class="footer">
+                <span>CLÍNICA VETERINÁRIA SEU PET <br>🐶😸</span>
+            </div>
         </div>
+    </div>
+
+    <div class="popup">
+        <div class="popup-content">
+            <span id="close-btn" class="fas fa-times close-pop" onclick="fecharpop()"></span>
+            <img src="resources/images/img_users/adm-cad.png" class="imgpop" alt="">
+            <form action="classes/loginadm.php" method="POST" id="frm-pop">
+                <div class="campo">
+                    <div class="row-inp">
+                        <i class="inp-icon-pop fas fa-user"></i>
+                        <input type="text" name="admlogin" id="admlogin" placeholder="Usuário">
+                    </div>
+                </div>
+                <div class="campo">
+                    <div class="row-inp">
+                        <i class="inp-icon-pop fas fa-lock"></i>
+                        <input type="password" name="admsenha" id="admsenha" placeholder="Senha">
+                    </div>
+                </div>
+                <div style="margin-top: 8px; margin-left: -11px" class="campo">
+                    <div class="row-inp colorinp-adm btn-cadind btn-cadpad">
+                        <input type="submit" style="border: 0; border-right: 3px solid black" name="btnCadastrar" id="btnCadastrar" value="Cadastrar">
+                        <i class="inp-icon-pop fas fa-address-book"></i>
+                    </div>
+                </div>
+
+        </div>
+        </form>
+    </div>
     </div>
     </div>
 </body>
