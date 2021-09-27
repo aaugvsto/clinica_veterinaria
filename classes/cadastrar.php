@@ -3,7 +3,7 @@
 include "../config/conexao.php";
 
 $msg = false;
-$foto = '../resources/images/img_users';
+$foto = '/resources/images/img_users/user.png';
 $nome  = $_POST['nome'];
 $cpf = $_POST['cpf'];
 $endereco = $_POST['endereco'];

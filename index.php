@@ -44,12 +44,15 @@ header('Content-Type: text/html; charset=utf-8');
     </div>
     <div class="body-items">
         <div class="container">
+            <div class="img-cad">
+            <img style="user-select: none;" src="resources/icons/img-login.png" alt="">
+            </div>
             <h2 class="txt-login">LOGIN</h2>
-            <form action="classes/login.php" method="POST">
+            <form action="app.php" method="POST">
                 <div class="campo">
                     <div class="row-inp colorinp-login">
                         <i class="inp-icon fas fa-user"></i>
-                        <input type="text" required="required" name="user" id="user" placeholder="Usuário">
+                        <input type="number"class="input-cadastro" required="required" name="user" id="user" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="11" placeholder="Usuário">
                     </div>
                 </div>
                 <div class="campo">

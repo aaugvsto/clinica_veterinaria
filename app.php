@@ -1,6 +1,39 @@
 <?php
-include("config/conexao.php");
-include("classes/exibirAnimais.php")
+include "config/conexao.php";
+
+if (empty($_POST['user']) || empty($_POST['pass'])) {
+    header('location: index.php');
+    exit();
+}
+
+$user = mysqli_real_escape_string($mysqli, $_POST['user']);
+$pass = mysqli_real_escape_string($mysqli, $_POST['pass']);
+
+$query = "select id, nome, arq_foto from users where cpf = '{$user}' and senha = md5('{$pass}')";
+
+$result = mysqli_query($mysqli, $query);
+
+$row = mysqli_num_rows($result);
+$arraysql = mysqli_fetch_array($result);
+$foto = $arraysql['arq_foto'];
+$nome = $arraysql['nome'];
+
+if ($row == 1) {
+    session_start();
+    $_SESSION['user'] = $user;
+} else {
+    header('location: index.php');
+    exit();
+}
+
+echo $user;
+
+if (isset($_POST["sair"])) {
+    session_destroy();
+    header('location: index.php');
+    exit();
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -11,6 +44,7 @@ include("classes/exibirAnimais.php")
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.1/css/jquery.dataTables.css">
     <link rel="shortcut icon" href="resources/favicon/veterinario.png" type="image/x-icon">
     <title>Cliníca Veterinária Seu Pet</title>
 </head>
@@ -21,8 +55,6 @@ include("classes/exibirAnimais.php")
         font-weight: normal;
         font-style: normal;
     }
-
-
 </style>
 
 <body class="body-app">
@@ -32,12 +64,12 @@ include("classes/exibirAnimais.php")
             <span id="open-btn" class="fas fa-bars"></span>
         </label>
         <div class="img-system"><img src="resources/favicon/veterinario1.png" alt=""></img></div>
-        
+
         <nav>
             <div class="user-data">
-                <img src="resources/images/img_users/user.png" class="brand" alt="foto"></img>
+                <img src="<?php echo $foto ?>" class="brand" style="border-radius: 50%; border: 1px black" alt="foto"></img>
                 <div id="nome">
-                    <p class="brand" id="nome">NAME_USER</p>
+                    <p class="brand" id="nome"><?php echo $nome ?></p>
                 </div>
             </div>
 
@@ -48,31 +80,32 @@ include("classes/exibirAnimais.php")
             <ul>
                 <li class="list-item"><i class="nav-link fas fa-home fa-fw"></i><a href="#" class="text-menu">Meus Pets</a></li>
                 <li class="list-item"><i class="nav-link fas fa-user fa-fw"></i><a href="#" class="text-menu">Meu perfil</a></li>
-                <li class="list-item"><i class="nav-link fas fa-sign-out-alt fa-fw"></i><a href="#" class="text-menu">Sair</a></li>
+                <form action="" style="padding: 40px;">
+                    <input type="submit" style="border-right: 0px;" name="sair" id="sair" value="sair">
+                </form>
             </ul>
         </nav>
     </div>
+<div class="body-ap">
+    <div class="container-app">
+        <div class="row">
+        <?php include("classes/tblAnimais.php") ?>
+        <?php include("classes/tblAnimais.php") ?>
+        </div>
+    </div>
+    <div class="container-app">
+        <div class="row">
+        <?php include("classes/tblAnimais.php") ?>
+        <?php include("classes/tblAnimais.php") ?>
+        </div>
+    </div>
+    </div>
 
-    <table class="center">
-        <tr>
-            <td>Nome</td>
-            <td>Raça</td>
-            <td>Sexo</td>
-            <td>Dono</td>
-            <td>Procedimento</td>
-        </tr>
-        <?php while($dado = $con->fetch_array()){?>
-        <tr>
-            <td><?php echo $dado["nome"]?></td>
-            <td><?php echo $dado["raca"]?></td>
-            <td><?php echo $dado["sexo"]?></td>
-            <td><?php echo $dado["nome_dono"]?></td>
-            <td><?php echo $dado["tipo_procedimento"]?></td>
-        </tr>
-        <?php } ?>
-    </table>    
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/js/all.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.1/js/jquery.dataTables.js"></script>
+
 </body>
 
 </html>
